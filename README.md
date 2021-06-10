@@ -1,2 +1,6 @@
-# fifteen-puzzle-solver
-An AI-based tool to solve the Fifteen Puzzle, written in Python 3. Utilizes the A* algorithm and allows the user to select from multiple heuristics.
+# 15 Puzzle Solver
+
+The 15 Puzzle is a popular sliding puzzle game, in which there is one empty space and 15 numbered tiles. The goal of the game is to move tiles around by sliding them into the empty space until the numbers are arranged in order and the empty space is in the bottom right corner. [The Wikipedia page](https://en.wikipedia.org/wiki/15_puzzle) has some pretty good illustrations a more in-depth explanation of how the puzzle works.
+
+## Development Process
+This project is still in development, but my overall process has been to code basic A* heuristics and then improve on them with optimizations. I started by creating a model of the game that could be easily rendered to ASCII for visualization purposes, and have slowly improved on it to make it more suitable for the A* pathfinding algorithm. This game is provably NP-hard, but I've been able to improve performance by roughly a factor of 8 over a naive approach using memoization and decreasing the number of operations per explored node. I've also been able to decrease graph coverage to roughly 1 node per 100 quadrillion for a 40-move shuffle, which I've been using as a benchmark. Time and space complexity are both `O(3<sup>n</sup>)`, so reducing the graph coverage so drastically is absolutely necessary to solve this problem in anything less than billions of years with billions of petabytes of memory.
